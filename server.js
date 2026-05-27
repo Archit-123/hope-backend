@@ -21,6 +21,11 @@ app.use(
 
 app.use("/api/auth", authRoutes);
 app.use("/api/nominees", nomineeRoutes);
+app.get("/", (req, res) => {
+  res.json({
+    message: "Hope API is running 🚀",
+  });
+});
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
